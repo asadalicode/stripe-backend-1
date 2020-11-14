@@ -8,7 +8,6 @@ const app = express();
 
 app.post('/charge',urlencodedParser, (req, res) => {
     var stripeToken = req.body.token;
-
      stripe.charges.create({
         amount: req.body.amount * 100,
         currency: 'usd',
